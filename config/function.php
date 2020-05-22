@@ -19,10 +19,10 @@
 		for ($i=0; $i < $length; $i++) { 
 				$token.=$char[rand(0,$len-1)];
 		}
-		retun $token;	
+		return $token;	
 	}
 
-	function redirect($loc,$key,$message){
+	function redirect($loc,$key=" ",$message=""){
 		$_SESSION[$key]=$message;
 		@header('location: '.$loc);
 	}
