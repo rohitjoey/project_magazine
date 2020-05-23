@@ -8,7 +8,7 @@
 						CREATE TABLE IF NOT EXISTS users
 						(
 							id int not NULL AUTO_INCREMENT PRIMARY KEY,
-							username varchar(50),
+							username varchar(50) UNIQUE KEY,
 							email varchar(50),
 							password varchar(200),
 							session_token text,
@@ -28,10 +28,9 @@
 								password='".sha1('Adminadmin@this.com')."',
 								role='Admin',
 								status='Active'
-						",
-
-
-	);
+						"
+		
+		);
 
 
 	foreach ($table as $key => $sql) {

@@ -16,6 +16,7 @@
 	function tokenize($length=100){
 		$char='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 		$token='';
+		$len=strlen($char);
 		for ($i=0; $i < $length; $i++) { 
 				$token.=$char[rand(0,$len-1)];
 		}
