@@ -50,6 +50,10 @@
                 <input type="password" class="form-control" placeholder="Password"  name="password" />
               </div>
               <div>
+                <input type="checkbox"name="rme"  />
+                <label>Remember me</label>
+              </div>
+              <div>
                 <!-- <a class="btn btn-default submit" href="index.html">Log in</a> -->
                 <button class=class="btn btn-default submit" type="submit">Log in</button>
                 <!-- <a class="reset_pass" href="#">Lost your password?</a> -->
