@@ -1,11 +1,13 @@
-<?php include 'inc/header.php'; ?>
-
+<?php include 'inc/header.php';
+      include 'inc/checklogin.php'; ?>
+        
         <!-- page content -->
         <div class="right_col" role="main">
+          
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Plain Page</h3>
+                <h3>Plain Page <?php flashMessage(); ?></h3>
               </div>
 
               <div class="title_right">

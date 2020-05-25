@@ -11,12 +11,46 @@
 
 		}
 
-		public function getUserById($user_id,$is_die){
+		public function getUserById($user_id,$is_die=false){
 			$args = array(
 						
 						'where'=>array(
 							'and'=>array(
 									'id'=>$user_id,
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function getUserByEmail($email,$is_die=false){
+			$args = array(
+						// 'field'=>'username,email,password',
+						'where'=>array(
+							'and'=>array(
+									'email'=>$email,
+									'status'=>'Active'	
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function getUserBySessionToken($session_token,$is_die=false){
+			$args = array(
+						// 'field'=>'username,email,password',
+						'where'=>array(
+							'and'=>array(
+									'session_token'=>$session_token,
+									'status'=>'Active'	
 									)),
 							/*'or'=>array(
 									'columnname'=>'value',
@@ -40,7 +74,7 @@
 						
 
 						);
-				return $this->updateUserByEmail($data,$args,$is_die);
+				return $this->updateData($data,$args,$is_die);
 		}
 
 		public function deleteUserByEmail($email,$is_die=false){
@@ -80,3 +114,29 @@
 			// 	 		)
 			// );
 ?>
+
+
+<!-- logo
+category
+	name
+	description
+blogpost
+	title
+	recent post
+		id desc
+	most read
+		view column(easy) or naya table(view time, view date, view count)
+	featured post
+		featured column
+
+comment
+	chuttai table
+		comment by
+		comment date(added_date)
+		commenter email
+		comment message
+		reply try -->
+		
+
+
+
