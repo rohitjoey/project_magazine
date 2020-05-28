@@ -17,28 +17,28 @@
 
     						$success=$user->updateUserByEmail($data,$user_info[0]->email);
     						if ($success) {
-    							redirect('../password-change','success','Password Change Successsfully');
+    							redirect('../password_change','success','Password Change Successsfully');
     						}else{
-    							redirect('../password-change','error','Error while Changing password');
+    							redirect('../password_change','error','Error while Changing password');
     						}
 
     					}else{
-    						redirect('../password-change','error','Old password is not correct');
+    						redirect('../password_change','error','Old password is not correct');
     					}
     				}else{
     					redirect('../logout');
     				}
     			}else{
-    				redirect('../password-change','error','New Password Doesnot Match');
+    				redirect('../password_change','error','New Password Doesnot Match');
     			}
     		}else{
-    			redirect('../password-change','error','Both new Password field are required.');
+    			redirect('../password_change','error','Both new Password field are required.');
     		}
     	}else{
-    		redirect('../password-change','error','Old Password Required');
+    		redirect('../password_change','error','Old Password Required');
     	}
     }else{
-    	redirect('../password-change','error','Unauthorized Access');
+    	redirect('../password_change','error','Unauthorized Access');
     }
 
  ?>
