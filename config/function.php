@@ -9,7 +9,7 @@
 	} 
 
 	function sanitize($str){
-		return trim(stripcslashes(strip_tags(str)));
+		return trim(stripcslashes(strip_tags($str)));
 
 	}
 

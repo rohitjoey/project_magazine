@@ -28,8 +28,18 @@
 								password='".sha1('Adminadmin@this.com')."',
 								role='Admin',
 								status='Active'
-						"
-		
+						",
+			'categories'=>"
+						CREATE TABLE IF NOT EXISTS categories
+						(
+							id int not NULL AUTO_INCREMENT PRIMARY KEY,
+							categoryname varchar(50),
+							description text,
+							status enum('Active','Passive') DEFAULT 'Passive',
+							added_by int,
+							created_date datetime DEFAULT current_timestamp,
+							updated_date datetime ON UPDATE current_timestamp
+						)",
 		);
 
 

@@ -86,7 +86,7 @@
 			
 			
 				
-					echo $this->sql;
+					//echo $this->sql;
 		
 			
 			$this->stmt=$this->conn->prepare($this->sql);
@@ -333,6 +333,7 @@
 						}
 					}
 				//where end	
+			// echo $this->sql;
 			
 			$this->stmt=$this->conn->prepare($this->sql);
 

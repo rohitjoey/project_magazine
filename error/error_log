@@ -1,0 +1,5 @@
+May Thu 2020 01:59:40 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Thu 2020 02:01:38 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Thu 2020 02:04:35 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Thu 2020 05:33:30 pm:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryname' in 'field list'
+May Thu 2020 05:35:30 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'

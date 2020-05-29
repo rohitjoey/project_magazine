@@ -11,7 +11,7 @@
 
 		}
 
-		public function getCategoryById($category_id,$is_die){
+		public function getCategoryById($category_id,$is_die=false){
 			$args = array(
 						
 						'where'=>array(
@@ -25,6 +25,38 @@
 
 						);
 						return $this->getData($args,$is_die);
+		}
+
+		public function getAllCategory($is_die=false){
+			$args = array(
+						
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function updateCategoryById($data,$category_id,$is_die=false){
+			$args = array(
+						
+						'where'=>array(
+							'and'=>array(
+									'id'=>$category_id
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+				return $this->updateData($data,$args,$is_die);
 		}
 
 		
