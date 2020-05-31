@@ -64,6 +64,7 @@
 							adType enum('widead','simplead') DEFAULT 'simplead',
 							image varchar(50),
 							added_by int,
+							status enum('Active','Passive') DEFAULT 'Active',
 							created_date datetime DEFAULT current_timestamp,
 							updated_date datetime ON UPDATE current_timestamp
 							

@@ -1,14 +1,14 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
-	$ads= new Ads;
-	debugger($_POST,true);
+	$ads= new Ads();
+	// debugger($_POST,true);
 	if($_POST){
 		$data=array(
-					'URL'=>sanitize($_POST['adsname']),
-					'adType'=>htmlentities($_POST['description']),		
+					'URL'=>filter_var($_POST['url'],FILTER_SANITIZE_URL),
+					'adType'=>$_POST['adType'],		
 					'added_by'=>$_SESSION['user_id']
 					);
-		// debugger($data);
+		 // debugger($data,true);
 		if(isset($_FILES) && !empty($_FILES) && !empty($_FILES['image']) && $_FILES['image']['error'] ==0){
 			$success=uploadImage($_FILES['image'],'ads');
 			if($success){
@@ -20,7 +20,7 @@
 				redirect('../ads','error','Error uploading image');
 			}
 		}
-
+		// debugger($_FILES,true);
 		if(isset($_POST['id']) && !empty($_POST['id'])){
 			// update
 			$action='Updat';
@@ -74,7 +74,7 @@
 							redirect('../ads','success','Ads deleted successfully');
 
 						}else{
-							redirect('../ads','error','Error while deleting data');
+							redirect('../ads','error','Error while deleting ad');
 
 						}
 					}else{

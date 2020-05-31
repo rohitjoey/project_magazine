@@ -59,6 +59,7 @@
 				$this->sql="INSERT INTO ";	
 				
 			//table name starts
+				// debugger($this->table,true);
 				if(isset($this->table) && !empty($this->table)){
 					$this->sql.=$this->table;
 					$this->sql.=" SET ";
@@ -85,7 +86,7 @@
 			}	
 			
 			
-				
+				// debugger($this->sql,true);
 					//echo $this->sql;
 		
 			

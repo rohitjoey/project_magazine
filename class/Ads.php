@@ -1,7 +1,7 @@
 <?php
 	class Ads extends Database{
 		function __construct(){
-			$this->table='adspost';
+			$this->table='ads';
 			Database::__construct();
 		}
 
@@ -29,14 +29,7 @@
 
 		public function getAllAds($is_die=false){
 			$args = array(
-						'field'=> ['id',
-						            'title',
-						            'content',
-						            'featured',
-						            
-						            '(SELECT categoryname FROM categories where id=categoryid) as category',
-						            'views',
-						            'image'],
+						
 						'where'=>array(
 							'and'=>array(
 									'status'=>'Active',
