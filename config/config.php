@@ -15,20 +15,23 @@
 		define('DB_NAME','magazine');
 		define('DB_USER','root');
 		define('DB_PASS','');
-		define('SITE_URL','http://www/magazine.com/');
+		define('SITE_URL','http://magazine.com/');
 	}else{
 		error_reporting(0);
 		define('DB_HOST','localhost');
 		define('DB_NAME','magazine');
 		define('DB_USER','root');
 		define('DB_PASS','');
-		define('SITE_URL','http://www/magazine.com/');
+		define('SITE_URL','http://www.magazine.com/');
 
 	}
 	define('ERROR_PATH',$_SERVER['DOCUMENT_ROOT'].'error/');
 	define('CONFIG_PATH',$_SERVER['DOCUMENT_ROOT'].'config/');
 	define('CLASS_PATH',$_SERVER['DOCUMENT_ROOT'].'class/');
 	define('UPLOADS_PATH',$_SERVER['DOCUMENT_ROOT'].'uploads/');
+	define('ALLOWED_EXTENSION',['jpg','png','gif','jpeg','tif']);
+
+	define('UPLOAD_URL',SITE_URL.'uploads/');
 	
 
 ?>		

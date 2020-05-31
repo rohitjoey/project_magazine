@@ -9,10 +9,21 @@
                      
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Category <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-folder"></i> Category <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="category">Categories</a></li>
                     </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-edit"></i> Blog <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="blog">List of blogs</a></li>
+                      <li><a href="addblog">Add blog</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="ads"><i class="fa fa-area-chart"></i> Ads</a>
+                    
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

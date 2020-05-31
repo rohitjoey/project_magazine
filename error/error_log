@@ -1,5 +1,35 @@
-May Thu 2020 01:59:40 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Thu 2020 02:01:38 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Thu 2020 02:04:35 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Thu 2020 05:33:30 pm:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryname' in 'field list'
-May Thu 2020 05:35:30 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Sat 2020 05:24:29 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Sat 2020 05:24:29 pm:(QUERY_RUN_ERROR)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''simplead,
+							image varchar(50),
+							added_by int,
+							created_date' at line 5
+May Sat 2020 05:25:10 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Sat 2020 05:25:56 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:26:13 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:26:19 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:27:13 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:30:23 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Sat 2020 05:30:38 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:31:12 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:32:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:32:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:39:23 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:42:42 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:44:21 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:45:04 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:46:43 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:48:48 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:50:29 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:50:38 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:53:28 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:53:31 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:53:31 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:54:09 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:54:09 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:54:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:54:55 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:54:55 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:56:17 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:56:17 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 05:59:50 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
+May Sat 2020 06:00:14 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist

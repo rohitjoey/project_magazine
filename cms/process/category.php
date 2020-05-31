@@ -1,7 +1,7 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
 	$category= new Category;
-	// debugger($_POST);
+	// debugger($_POST,true);
 	if($_POST){
 		$data=array(
 					'categoryname'=>sanitize($_POST['categoryname']),

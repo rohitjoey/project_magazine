@@ -1,5 +1,5 @@
 <?php 
-      $header="Category";
+      $header="Ads";
       include 'inc/header.php';
       include 'inc/checklogin.php'; ?>
         
@@ -9,7 +9,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Category<?php flashMessage(); ?></h3>
+                <h3>Ads<?php flashMessage(); ?></h3>
               </div>
 
              <!--  <div class="title_right">
@@ -30,9 +30,9 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Categories</h2>
+                    <h2>List of Ads</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                      <a href="JavaScript:;" class="btn btn-primary" onclick="addCategory();">Add category</a>
+                      <a href="javascript:;" class="btn btn-primary"  onclick="showModal();">Add ad</a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -40,29 +40,46 @@
                        <table id="datatable" class="table table-hover table-bordered">
                          <thead>
                           <th>S.N</th>
-                          <th>Category Name</th>  
-                          <th>Description</th>
-                          <th>Action</th>
+                          <th>URL</th>  
+                          <th>adType</th>
+                          <th>Image</th>
+                          
+                          
                          </thead>
                           <tbody>
                             <?php
-                              $category=new Category();
-                              $data=$category->getAllCategory();
+                              $ads=new Ads();
+                              $data=$ads->getAllAds();
+                              // debugger($data,true);
                               if ($data) {
-                                foreach ($data as $key => $value) {
+                                foreach ($data as $key => $ads) {
                                  
                                 
                             ?>        
                                     <tr>
                                       <td><?php echo $key+1;?></td>
-                                      <td><?php echo $value->categoryname;?></td>
-                                      <td><?php echo html_entity_decode($value->description);?></td>
-                                      <!-- <td><?php echo $value->status;?></td> -->
+                                      <td><?php echo $ads->title;?></td>
+                                      <td><?php echo html_entity_decode($ads->content);?></td>
+                                      <td><?php echo $ads->featured;?></td>
+                                      <td><?php echo $ads->ads;?></td>
+                                      <td><?php echo (isset($ads->views) && !empty($ads->views))?$ads->views:"0";?></td>
+                                      
+                                      <?php 
+                                        if(isset($ads->image) && !empty($ads->image) && file_exists(UPLOADS_PATH.'ads/'.$ads->image)){
+                                          $thumbnail=UPLOAD_URL.'ads/'.$ads->image;
+                                        }else{
+                                          $thumbnail=UPLOAD_URL.'noimage.png';
+                                        }
+                                       ?> 
+                                       <td><img src="<?php echo($thumbnail);?>" style="width: 250px; height: auto"></td>
+
+
+                                      
                                       <td>
-                                        <a href="javascript:;" class="btn btn-info" onclick="editCategory(this);" data-category_info='<?php echo(json_encode($value)); ?>' >
+                                        <a href="addads?id=<?php echo($ads->id);?> &amp; act=<?php echo substr(md5("Edit Ads".$ads->id.$_SESSION['token']), 3, 10); ?> "  class="btn btn-info" >
                                           <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="process/category?id=<?php echo($value->id);?> &amp; act=<?php echo substr(md5("Delete Category".$value->id.$_SESSION['token']), 3, 10); ?> " class="btn btn-danger" onclick="return  confirm('Are you sure you want to delete this blog?')">
+                                        <a href="process/ads?id=<?php echo($ads->id);?> &amp; act=<?php echo substr(md5("Delete Ads".$ads->id.$_SESSION['token']), 3, 10); ?> " class="btn btn-danger" onclick="return  confirm('Are you sure you want to delete this ads?')">
                                           <i class="fa fa-trash"></i>
                                         </a>
                                                                                     
@@ -83,20 +100,23 @@
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="title">Add Category</h4>
+                              <h4 class="modal-title" id="title">Add ads</h4>
                             </div>
-                            <form action="process/category" method="post">
+                            <form action="process/ads" method="post">
                             <div class="modal-body">
                               <div class="form-group">
-                                <label>Category Name</label>
-                                <input type="text" class="form-control" placeholder="Category Name" name="categoryname" id="categoryname">
+                                <label>Ad url</label>
+                                <input type="url" class="form-control" placeholder="Enter the ad url" name="url" id="url">
                               </div>
                               <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="Description"></textarea>
+                                <label>Ad type</label><br>
+                                <input type="radio" name="adtype" id="adtype" value="simplead" > Simple Ad
+                                <input type="radio" name="adtype" id="adtype" value="widead" > Wide Ad
                               </div>
-
-                            </div>
+                              <div class="form-group" >
+                                <label>Ad Image</label>
+                                <input type="file" name="image" accept="image/*" id="image">
+                              </div> 
                             
                             <div class="modal-footer">
                               <input type="hidden" id="id" name="id">
@@ -108,7 +128,6 @@
                         </div><!-- /.modal-dialog -->
                       </div><!-- /.modal -->
 
-
                   </div>
                 </div>
               </div>
@@ -117,46 +136,36 @@
         <!-- /page content -->
 
 <?php include 'inc/footer.php';  ?>
-<script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js" id=""></script>
+
+
+
 <script src="assets/js/datatable.js"></script>
 <script type="text/javascript">
-  function  addCategory(){
-    $('#title').html('Add Category');
-    $('#categoryname').val("");
+  function  addAds(){
+    $('#title').html('Add Ads');
+    $('#adsname').val("");
     $('#id').removeAttr('value');
 
     showModal();
   }
   
-  function  editCategory(element){
-    var category_info=$(element).data('category_info');
-    if (typeof(category_info) != 'object') {
-      category_info=JSON.parse(category_info);
+  function  editAds(element){
+    var ads_info=$(element).data('ads_info');
+    if (typeof(ads_info) != 'object') {
+      ads_info=JSON.parse(ads_info);
     }
-     // console.log(category_info);
-    $('#title').html('Edit Category');
-    $('#categoryname').val(category_info.categoryname);
-    $('#id').val(category_info.id);
-    showModal(category_info.description);
+     // console.log(ads_info);
+    $('#title').html('Edit Ads');
+    $('#adsname').val(ads_info.adsname);
+    $('#id').val(ads_info.id);
+    showModal();
   }
 
 
   function showModal(data=" "){
-    ckeditor(data);
+   
     $('.modal').modal();
   }
 
-  function  ckeditor(data=""){
-    $('.ck').remove();
-    ClassicEditor
-      .create( document.querySelector( '#description' ) )
-      .then( editor => {
-          editor.setData(data);
-      } )
-      .catch( error => {
-          console.error( error );
-      } );
-  }
+  
 </script>
-
-        
