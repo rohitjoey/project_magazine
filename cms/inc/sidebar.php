@@ -22,7 +22,10 @@
 
                     </ul>
                   </li>
-                  <li><a href="ads"><i class="fa fa-area-chart"></i> Ads</a>
+                  <li><a href="ads"><i class="fa fa-at"></i> Ads</a>
+                    
+                  </li>
+                  <li><a href="share"><i class="fa fa-bullhorn"></i> Share</a>
                     
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>

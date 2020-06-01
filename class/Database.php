@@ -210,7 +210,7 @@
 				if(isset($args['limit']) && !empty($args['limit'])){
 					$this->sql.="LIMIT ".$args['limit']['offset'].",".$args['limit']['no_of_data'];
 				}
-
+				//debugger($this->sql,true);
 			if ($is_die) {
 					echo $this->sql;
 					exit();

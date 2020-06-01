@@ -1,83 +1,12 @@
-May Sat 2020 05:24:29 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sat 2020 05:24:29 pm:(QUERY_RUN_ERROR)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''simplead,
-							image varchar(50),
-							added_by int,
-							created_date' at line 5
-May Sat 2020 05:25:10 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sat 2020 05:25:56 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:26:13 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:26:19 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:27:13 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:30:23 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sat 2020 05:30:38 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:31:12 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:32:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:32:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:39:23 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:42:42 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:44:21 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:45:04 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:46:43 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:48:48 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:50:29 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:50:38 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:53:28 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:53:31 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:53:31 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:54:09 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:54:09 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:54:52 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:54:55 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:54:55 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:56:17 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:56:17 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 05:59:50 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sat 2020 06:00:14 pm:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:20:49 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:22:08 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:25:01 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:28:31 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:28:45 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:28:56 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:29:05 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:29:05 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:30:20 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:30:48 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:30:58 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:31:36 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:31:45 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:31:45 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:32:16 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:32:24 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:32:24 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:34:03 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:34:21 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:35:02 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 09:35:11 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:37:13 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:37:17 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:37:27 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:38:48 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:38:49 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:38:50 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:39:07 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:41:08 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:41:34 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:42:12 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 09:42:12 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 09:42:23 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.adspost' doesn't exist
-May Sun 2020 09:42:53 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:43:08 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:43:21 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:44:15 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:44:38 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:45:27 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:45:30 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'title' in 'field list'
-May Sun 2020 09:46:20 am:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
-May Sun 2020 09:54:24 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'
-May Sun 2020 10:05:50 am:(addData)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'
-May Sun 2020 10:10:13 am:(addData)SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magazine.ads' doesn't exist
-May Sun 2020 10:10:20 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 10:10:20 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 10:13:33 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
-May Sun 2020 10:13:37 am:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+May Sun 2020 06:30:17 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+May Sun 2020 06:31:15 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 01:25:57 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 01:28:17 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:17:54 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Jun Mon 2020 05:20:56 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:25:24 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:26:59 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:27:14 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:40:41 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:41:24 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
+Jun Mon 2020 05:41:32 pm:(addData)SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id DESC' at line 1
