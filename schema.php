@@ -82,6 +82,24 @@
 					updated_date datetime on update current_timestamp
 				)
 		",
+			'comment' => "
+			CREATE TABLE IF NOT EXISTS comments
+				(
+					id int not null AUTO_INCREMENT PRIMARY KEY,
+					name varchar(30),
+					email varchar(50),
+					website varchar(30),
+					message text,	
+					commentType enum('comment','reply') default 'comment',
+					commentId int,
+					blogId int,
+					commentStatus enum('accept','waiting','reject') DEFAULT 'waiting',
+					status enum('Active','Passive') default 'Active',
+					added_by int,
+					created_date datetime default current_timestamp,
+					updated_date datetime on update current_timestamp
+				)
+		",
 									
 						
 

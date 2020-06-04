@@ -13,7 +13,16 @@
 
 		public function getBlogById($blog_id,$is_die=false){
 			$args = array(
-						
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            'categoryid',
+						            'created_date',
+						            'added_by',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image'],
 						'where'=>array(
 							'and'=>array(
 									'id'=>$blog_id,
@@ -26,7 +35,6 @@
 						);
 						return $this->getData($args,$is_die);
 		}
-
 		public function getAllBlog($is_die=false){
 			$args = array(
 						'field'=> ['id',
@@ -41,6 +49,112 @@
 							'and'=>array(
 									'status'=>'Active',
 									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function getAllFeaturedBlogOfCategoryWithLimit($cat_id,$offset,$no_of_data,$is_die=false){
+			$args = array(
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image',
+						        	'created_date'],
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									'featured'=>"Featured",
+									'categoryid'=>$cat_id
+									)),
+						'limit'=>array(
+							'offset'=>$offset,
+							'no_of_data'=>$no_of_data	
+						),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+		// SELECT COUNT(id) as count FROM `blogpost` WHERE `categoryid`=8
+
+		public function getBlogNumberByCategory($cat_id,$is_die=false){
+			$args = array(
+						'field'=> ['COUNT(id) as count'],
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									'categoryid'=>$cat_id
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function getAllRecentBlogOfCategoryWithLimit($cat_id,$offset,$no_of_data,$is_die=false){
+			$args = array(
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image',
+						        	'created_date'],
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									'categoryid'=>$cat_id
+									)),
+						'limit'=>array(
+							'offset'=>$offset,
+							'no_of_data'=>$no_of_data	
+						),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+
+		public function getAllMostViewedBlogOfCategoryWithLimit($cat_id,$offset,$no_of_data,$is_die=false){
+			$args = array(
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image',
+						        	'created_date'],
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									'categoryid'=>$cat_id
+									)),
+						'order'=>array(
+									'columnname'=>'views',
+									'orderType'=>'DESC'
+									),
+						'limit'=>array(
+							'offset'=>$offset,
+							'no_of_data'=>$no_of_data	
+						),
 							/*'or'=>array(
 									'columnname'=>'value',
 									'columnname'=>'value')*/

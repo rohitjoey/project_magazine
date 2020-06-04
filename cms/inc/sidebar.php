@@ -28,6 +28,10 @@
                   <li><a href="share"><i class="fa fa-bullhorn"></i> Share</a>
                     
                   </li>
+                  </li>
+                  <li><a href="comment"><i class="fa fa-comments-o"></i> Comments </a>
+                    
+                  </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">General Elements</a></li>

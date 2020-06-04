@@ -68,6 +68,7 @@
                         <label>Blog Content</label>
                         <textarea name="content" id="content" cols="30" rows="10" placeholder="Contents here" class="form-control">
                          <?php echo (isset($blog_info->content) && !empty($blog_info->content))?$blog_info->content:"";?>
+                           
                         </textarea>
                       </div>  
                       <div class="form-group col-md-8" >
@@ -86,8 +87,9 @@
                             $categories=$category->getAllCategory();
                             if($categories){
                               foreach ($categories as $key => $category) {
+
                           ?>
-                            <option value="<?php echo($category->id); ?>" <?php echo ($blog_info->categoryid==$category->id)?'selected':"";?>><?php echo($category->categoryname);?></option>
+                            <option value="<?php echo($category->id); ?>" <?php echo (isset($blog_info->categoryid) && !empty($blog_info->categoryid) && $blog_info->categoryid==$category->id)?"selected":""; ?>><?php echo $category->categoryname; ?></option>
                           <?php   
                             }
                           }

@@ -108,6 +108,10 @@
 			// 			)
 			// 		)
 			// 	'order' => 'ASC|DESC',
+				// 'order' => array(
+				// 				'columnname'=>'view',
+				// 				'orderType'=>'ASC|DESC'
+				// 				)
 			// 	'limit' => array(
 			// 				'offset' => 6,
 			// 				'no_of_data' =>7	

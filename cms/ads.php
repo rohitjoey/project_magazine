@@ -35,7 +35,7 @@
                   <div class="x_title">
                     <h2>List of Ads</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                      <a href="javascript:;" class="btn btn-primary"  onclick="showModal();">Add ad</a>
+                      <a href="javascript:;" class="btn btn-primary"  onclick="addAds();">Add ad</a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

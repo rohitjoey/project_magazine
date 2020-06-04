@@ -181,7 +181,7 @@
 								$this->sql.=implode(' and ', $col_and);
 
 							}
-							if(isset($args['where']['or']) &4& !empty($args['where']['or'])){
+							if(isset($args['where']['or']) && !empty($args['where']['or'])){
 								$col_or=array();
 								foreach ($args['where']['or'] as $key => $value) {
 									$col_or[]=$key.'= :'.$key;
@@ -197,7 +197,9 @@
 
 				//order start
 					if(isset($args['order']) && !empty($args['order'])){
-						if($args['order']=='DESC'){
+						if(is_array($args['order'])){
+							$this->sql.=' order by '.$args['order']['columnname'].' '.$args['order']['orderType']." ";
+						}else if($args['order']=='DESC'){
 							$this->sql.=' order by id DESC ';
 						}else{
 							$this->sql.=' order by id ASC ';

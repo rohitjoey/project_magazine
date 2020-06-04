@@ -34,6 +34,7 @@
 							'and'=>array(
 									'status'=>'Active',
 									)),
+							'order'=>'ASC',
 							/*'or'=>array(
 									'columnname'=>'value',
 									'columnname'=>'value')*/
