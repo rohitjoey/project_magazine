@@ -6,6 +6,10 @@
 				$blog_info=$blog_object->getBLogById($blog_id);
 				if($blog_info){
 					$blog_info=$blog_info[0];
+					$data=array(
+							'views'=>$blog_info->views+1
+						);
+					$blog_object->updateBlogById($data,$blog_info->id);
 					// debugger($blog_info);
 				}else{
 					redirect('index');

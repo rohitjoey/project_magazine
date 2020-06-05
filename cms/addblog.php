@@ -65,7 +65,7 @@
                         <input type="text" name="title" class="form-control" id="title" placeholder="Blog Title" value="<?php echo (isset($blog_info->title) && !empty($blog_info->title))?$blog_info->title:"";?>">
                       </div>  
                       <div class="form-group col-md-8" >
-                        <label>Blog Content</label>
+                        <label>Blog Content</label> 
                         <textarea name="content" id="content" cols="30" rows="10" placeholder="Contents here" class="form-control">
                          <?php echo (isset($blog_info->content) && !empty($blog_info->content))?$blog_info->content:"";?>
                            

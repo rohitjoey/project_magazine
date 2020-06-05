@@ -35,6 +35,28 @@
 						);
 						return $this->getData($args,$is_die);
 		}
+
+		public function getBlogByArchiveDate($date,$is_die=false){
+			$args = array(
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            'categoryid',
+						            'created_date',
+						            'added_by',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image','created_date'],
+						'where'=>" where created_date like '".$date."%'"
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
 		public function getAllBlog($is_die=false){
 			$args = array(
 						'field'=> ['id',
