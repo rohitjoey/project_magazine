@@ -1,5 +1,9 @@
 <!-- footer content -->
         
+        <!-- /footer content -->
+      </div>
+    </div><!-- footer content -->
+        
           
          
         <!-- /footer content -->

@@ -1,6 +1,6 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
-	//redirect('cms/index');
+	redirect('category');
 	/*$category= new Category();
 	$user= new User();
 	/*$data=array(

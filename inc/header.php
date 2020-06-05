@@ -42,7 +42,7 @@
 					<div class="container">
 						<!-- logo -->
 						<div class="nav-logo">
-							<a href="index" class="logo"><img src="assets/img/logo.png" alt=""></a>
+							<a href="index" class="logo"><img src="assets/img/logowhite-1.png" style="width:180px;height:auto;" alt=""></a>
 						</div>
 						<!-- /logo -->
 

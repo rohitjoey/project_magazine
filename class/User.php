@@ -120,27 +120,6 @@
 ?>
 
 
-<!-- logo
-category
-	name
-	description
-blogpost
-	title
-	recent post
-		id desc
-	most read
-		view column(easy) or naya table(view time, view date, view count)
-	featured post
-		featured column
-
-comment
-	chuttai table
-		comment by
-		comment date(added_date)
-		commenter email
-		comment message
-		reply try -->
-		
 
 
 
