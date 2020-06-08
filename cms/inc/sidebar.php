@@ -24,6 +24,10 @@
              
                   <li><a href="comment"><i class="fa fa-comments-o"></i> Comments </a>
                   </li>
+                  <li><a href="subscribe"><i class="fa fa-check"></i> Subscribers </a>
+                  </li>
+                  <li><a href="contacts"><i class="fa fa-envelope"></i> Contacts </a>
+                  </li>
 
                   <li><a href="archive"><i class="fa fa-archive"></i> Archives </a>
                   </li>

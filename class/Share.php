@@ -1,5 +1,5 @@
 <?php 
-	class share extends database{
+	class Share extends Database{
 		function __construct(){
 			$this->table = 'share';
 			database::__construct();

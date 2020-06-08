@@ -71,9 +71,7 @@
 
 							
 							<div class="section-row">
-									<a href="#">
-										<img class="img-responsive" src="./assets/img/ad-2.jpg" alt="">
-									</a>
+									<?php randomAd('widead');?>
 							</div>
 						</div>
 						<!-- /post widget -->
@@ -83,9 +81,7 @@
 					<div class="col-md-4">
 						<!-- ad -->
 						<div class="aside-widget text-center">
-							<a href="#" style="display: inline-block;margin: auto;">
-								<img class="img-responsive" src="./assets/img/ad-1.jpg" alt="">
-							</a>
+							<?php randomAd('simplead');?>
 						</div>
 						<!-- /ad -->
 

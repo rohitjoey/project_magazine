@@ -30,9 +30,23 @@
 	
 	}
 
+	function randomAd($type){	
+		$ad= new Ads();
+		$ads_info=$ad->getAdsByadType($type);
+		$random=rand(0,sizeof($ads_info)-1)	;
+		if(isset($ads_info[$random]->image) && !empty($ads_info[$random]->image) && file_exists(UPLOADS_PATH.'ads/'.$ads_info[$random]->image)){												
+						$thumbnail=UPLOAD_URL.'ads/'.$ads_info[$random]->image;
+					}else{
+						$thumbnail=UPLOAD_URL.'logo.png';	
+					}
+	?>
+			<a href="<?php echo $ads_info[$random]->URL?>" style="display: inline-block;margin: auto;">
+				<img class="img-responsive" src="<?php echo $thumbnail ?>" alt="">
+			</a>
+	<?php
+	}
 
-
-
+	
 	function flashMessage(){
 
 		if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {

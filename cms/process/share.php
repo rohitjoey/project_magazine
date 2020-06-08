@@ -41,9 +41,9 @@ if (isset($_POST) && !empty($_POST)) {
         }
     
     if ($success) {
-        redirect('../share', 'success', $act . 'ed share succesfully');
+        redirect('../share', 'success', $action . 'ed share succesfully');
     } else {
-        redirect('../share', 'error', 'Problem while ' . $act . 'ing share.');
+        redirect('../share', 'error', 'Problem while ' . $action . 'ing share.');
     }
 // for deletion
 }else if (isset($_GET) && !empty($_GET)) {

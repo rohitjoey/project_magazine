@@ -111,6 +111,28 @@
 					updated_date datetime on update current_timestamp
 				)
 		",
+			'newsletter' => "
+			CREATE TABLE IF NOT EXISTS newsletter
+				(
+					id int not null AUTO_INCREMENT PRIMARY KEY,
+					email varchar(50),
+					status enum('Active','Passive') default 'Active',
+					created_date datetime default current_timestamp,
+					updated_date datetime on update current_timestamp
+				)
+		",
+			'contact' => "
+				CREATE TABLE IF NOT EXISTS contactus
+					(
+						id int not null AUTO_INCREMENT PRIMARY KEY,
+						email varchar(50),
+						subject varchar(50),
+						message text,
+						status enum('Active','Passive') default 'Active',
+						created_date datetime default current_timestamp,
+						updated_date datetime on update current_timestamp
+					)
+			",
 									
 						
 

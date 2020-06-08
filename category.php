@@ -123,20 +123,8 @@
 							
 							<!-- ad -->
 							<div class="col-md-12">
-								<?php 
-								$ad= new Ads();
-								$ads_info=$ad->getAllAds();
-								// debugger($ads_info);
-								if(isset($ads_info[1]->image) && !empty($ads_info[1]->image) && file_exists(UPLOADS_PATH.'ads/'.$ads_info[1]->image)){												
-												$thumbnail=UPLOAD_URL.'ads/'.$ads_info[1]->image;
-											}else{
-												$thumbnail=UPLOAD_URL.'logo.png';	
-											}
-							?>
 								<div class="section-row">
-									<a href="<?php echo $ads_info[1]->URL?>">
-										<img class="img-responsive center-block" src="<?php echo $thumbnail ?>" alt="">
-									</a>
+									<?php randomAd('widead');?>
 								</div>
 							</div>
 							<!-- ad -->
@@ -192,20 +180,7 @@
 					<div class="col-md-4">
 						<!-- ad -->
 						<div class="aside-widget text-center">
-							<?php 
-								$ad= new Ads();
-								$ads_info=$ad->getAllAds();
-								// debugger($ads_info);
-								if(isset($ads_info[0]->image) && !empty($ads_info[0]->image) && file_exists(UPLOADS_PATH.'ads/'.$ads_info[0]->image)){												
-												$thumbnail=UPLOAD_URL.'ads/'.$ads_info[0]->image;
-											}else{
-												$thumbnail=UPLOAD_URL.'logo.png';	
-											}
-							?>
-							<a href="<?php echo $ads_info[0]->URL?>" style="display: inline-block;margin: auto;">
-
-								<img class="img-responsive" src="<?php echo $thumbnail ?>" alt="">
-							</a>
+							<?php randomAd('simplead');?>
 						</div>
 						<!-- /ad -->
 						<!-- ./assets/img/ad-1.jpg -->
@@ -239,7 +214,7 @@
 						</div>
 						<!-- /post widget -->
 						
-						<!-- catagories -->
+						<!-- categories -->
 						<div class="aside-widget">
 							<div class="section-title">
 								<h2>Categories</h2>
@@ -265,7 +240,7 @@
 								</ul>
 							</div>
 						</div>
-						<!-- /catagories -->
+						<!-- /categories -->
 						
 						
 						

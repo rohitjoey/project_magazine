@@ -27,6 +27,24 @@
 						return $this->getData($args,$is_die);
 		}
 
+		public function getAdsByadType($type,$is_die=false){
+			$args = array(
+						// 'field'=>['id','URL','adType','image','COUNT(id) as count'],
+						'where'=>array(
+							'and'=>array(
+									'adType'=>$type,
+									'status'=>"Active"
+									)),
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+		
+
 		public function getAllAds($is_die=false){
 			$args = array(
 						

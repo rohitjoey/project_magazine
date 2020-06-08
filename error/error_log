@@ -1,0 +1,2 @@
+Jun Mon 2020 12:23:44 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'
+Jun Mon 2020 12:23:45 pm:(QUERY_RUN_ERROR)SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Admin' for key 'username'

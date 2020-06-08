@@ -1,3 +1,16 @@
+<?php 
+	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+									         $url = "https://";   
+									    else  
+									         $url = "http://";   
+									    // Append the host(domain name, ip) to the URL.   
+									    $url.= $_SERVER['HTTP_HOST'];   
+									    
+									    // Append the requested resource location to the URL   
+									    $url.= $_SERVER['REQUEST_URI'];    
+									      
+								?>
+
 <!-- Footer -->
 		<footer id="footer">
 			<!-- container -->
@@ -7,11 +20,10 @@
 					<div class="col-md-5">
 						<div class="footer-widget">
 							<div class="footer-logo">
-								<a href="index" class="logo"><img src="assets/img/logo.png" alt=""></a>
+								<a href="index" class="logo"><img src="assets/img/logowhite-1.png" alt="" style="width:180px;height:auto;"></a>
 							</div>
 							<ul class="footer-nav">
 								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Advertisement</a></li>
 							</ul>
 							<div class="footer-copyright">
 								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -36,7 +48,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								<div class="footer-widget">
 									<h3 class="footer-title">Categories</h3>
 									<ul class="footer-links">
-									<?php 
+									<?php
 										$category = new Category();
 										$categories=$category->getAllCategory();
 										foreach ($categories as $key => $categories) {
@@ -55,16 +67,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="footer-widget">
 							<h3 class="footer-title">Join our Newsletter</h3>
 							<div class="footer-newsletter">
-								<form>
-									<input class="input" type="email" name="newsletter" placeholder="Enter your email">
-									<button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
+								<form method="get" action="process/subscribe">
+									<input class="input" type="email" name="newsletter" placeholder="Enter your email" required="">
+									<input type="hidden" name="url" value="<?php echo $url ?>" >
+									<button class="newsletter-btn" ><i class="fa fa-paper-plane"></i></button>
 								</form>
 							</div>
 							<ul class="footer-social">
+						<?php		
+							if ($shares) {
+								foreach ($shares as $key => $share) {
+						?>			
+									<li><a href="<?php echo $share->url?>"><i class="<?php echo $share->class ?>"></i></a></li>
+						<?php 			
+								}
+							}
+						?>		
 								
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
 							</ul>
 						</div>
 					</div>
