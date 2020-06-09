@@ -9,35 +9,41 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">	
+					
 					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+							<?php
+								$blog_object= new BLog();
+								$featured_info=$blog_object->getAllFeaturedBlog();
+								if($featured_info){
+									 	for ($i=0; $i <2 ; $i++) { 
+										$random=rand(0,sizeof($featured_info)-1);
+										// echo $random;
+										if(isset($featured_info[$random]->image) && !empty($featured_info[$random]->image) && file_exists(UPLOADS_PATH.'blog/'.$featured_info[$random]->image)){
+												$thumbnail=UPLOAD_URL.'blog/'.$featured_info[$random]->image;
 
-					<!-- post -->
+
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+									// debugger($featured_info[$random]);
+								?>
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
+									<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
+										<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($featured_info[$random]->created_date));?></span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
+								<h3 class="post-title"><a href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><?php echo $featured_info[$random]->title; ?></a></h3>
 							</div>
 						</div>
 					</div>
 					<!-- /post -->
+				<?php 
+								}		
+							}
+						?>		
 				</div>
 				<!-- /row -->
 
@@ -48,98 +54,48 @@
 							<h2>Recent Posts</h2>
 						</div>
 					</div>
+					<?php
+						$offset=0;
+						for ($i=0; $i <2 ; $i++) { 
+								$recent_info=$blog_object->getAllRecentBlog($offset,3);
+								// debugger($recent_info,true);
+								if($recent_info){
+									 	foreach ($recent_info as $key => $recent) {
+										if(isset($recent->image) && !empty($recent->image) && file_exists(UPLOADS_PATH.'blog/'.$recent->image)){
+												$thumbnail=UPLOAD_URL.'blog/'.$recent->image;
+
+
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+									// debugger($featured_info[$random]);
+								?>
 
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-3.jpg" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
+									<a class="post-category <?php echo(COLOR[$recent->categoryid%4]);?>" href="category?id=<?php echo $recent->categoryid ?>"><?php echo $recent->category ?></a>
+									<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($recent->created_date));?></span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
+								<h3 class="post-title"><a href="blog-post?id=<?php echo $recent->id; ?>"><?php echo $recent->title; ?></a></h3>
 							</div>
 						</div>
 					</div>
 					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
+					<?php 
+								}
+							}	
+					?>
 					<div class="clearfix visible-md visible-lg"></div>
+					<?php 
+						$offset=3;
+						}?>
 
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-6.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+					
 
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-4" href="category.html">Css</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
 				</div>
 				<!-- /row -->
 
@@ -148,112 +104,78 @@
 					<div class="col-md-8">
 						<div class="row">
 							<!-- post -->
+							<?php
+								$recent=$blog_object->getAllRecentBlog(6,1);
+								// echo $offset;
+								$recent_big=$recent[0];
+								// debugger($recent_info);
+								if($recent_big){
+										if(isset($recent_big->image) && !empty($recent_big->image) && file_exists(UPLOADS_PATH.'blog/'.$recent_big->image)){
+												$thumbnail=UPLOAD_URL.'blog/'.$recent_big->image;
+
+
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+									// debugger($featured_info[$random]);
+							?>
+
 							<div class="col-md-12">
 								<div class="post post-thumb">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $recent_big->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
+											<a class="post-category <?php echo(COLOR[$recent_big->categoryid%4]);?>" href="category?id=<?php echo $recent_big->categoryid ?>"><?php echo $recent_big->category ?></a>
+											<span class="post-date"style="color:black;"><?php echo date("M d, Y",strtotime($recent_big->created_date));?></span>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
+										<h3 class="post-title"><a href="blog-post?id=<?php echo $recent_big->id; ?>"><?php echo $recent_big->title; ?></a></h3>
 									</div>
 								</div>
 							</div>
+							<?php 
+								}
+							?>
+
 							<!-- /post -->
 
 							<!-- post -->
+							<?php 
+								$offset=7;
+								for ($i=0; $i <3 ; $i++) { 
+								$recent_info=$blog_object->getAllRecentBlog($offset,2);
+								// debugger($recent_info,true);
+								if($recent_info){
+									 	foreach ($recent_info as $key => $recent) {
+										if(isset($recent->image) && !empty($recent->image) && file_exists(UPLOADS_PATH.'blog/'.$recent->image)){
+												$thumbnail=UPLOAD_URL.'blog/'.$recent->image;
+
+
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+									// debugger($featured_info[$random]);
+								?>
 							<div class="col-md-6">
 								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">Css</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
+									<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category <?php echo(COLOR[$recent->categoryid%4]);?>" href="category?id=<?php echo $recent->categoryid ?>"><?php echo $recent->category ?></a>
+									<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($recent->created_date));?></span>
+								</div>
+								<h3 class="post-title"><a href="blog-post?id=<?php echo $recent->id; ?>"><?php echo $recent->title; ?></a></h3>
 									</div>
 								</div>
 							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
+							<?php 
+									}
+								}
+							?>
 							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-5.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-3.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
+							<?php
+								$offset+=2;
+								}
+							?>			
 							<!-- /post -->
 						</div>
 					</div>
@@ -264,8 +186,33 @@
 							<div class="section-title">
 								<h2>Most Read</h2>
 							</div>
+							<?php 
+								$blog_object = new Blog();
+								$blog_most=$blog_object->getBlogByViews(0,4);
+								// debugger($blog_most);
+								if($blog_most){
+									foreach ($blog_most as $key => $blog) {
+										if(isset($blog->image) && !empty($blog->image) && file_exists(UPLOADS_PATH.'blog/'.$blog->image)){												
+												$thumbnail=UPLOAD_URL.'blog/'.$blog->image;
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+							?>
+
 
 							<div class="post post-widget">
+								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<div class="post-body">
+									<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title ?></a></h3>
+								</div>
+							</div>
+
+							<?php				
+									}
+								}
+							?>
+
+							<!-- <div class="post post-widget">
 								<a class="post-img" href="blog-post.html"><img src="./assets/img/widget-1.jpg" alt=""></a>
 								<div class="post-body">
 									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
@@ -291,7 +238,7 @@
 								<div class="post-body">
 									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<!-- /post widget -->
 
@@ -300,35 +247,46 @@
 							<div class="section-title">
 								<h2>Featured Posts</h2>
 							</div>
+							<?php
+								
+								$featured_info=$blog_object->getAllFeaturedBlog();
+								if($featured_info){
+									for ($i=0; $i < 2; $i++) { 
+										$random=rand(0,sizeof($featured_info)-1);
+										// echo $random;
+										if(isset($featured_info[$random]->image) && !empty($featured_info[$random]->image) && file_exists(UPLOADS_PATH.'blog/'.$featured_info[$random]->image)){
+												$thumbnail=UPLOAD_URL.'blog/'.$featured_info[$random]->image;
+
+
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+									// debugger($featured_info[$random]);
+								?>
+
+							
+
 							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-meta">
-										<a class="post-category cat-3" href="category.html">Jquery</a>
-										<span class="post-date">March 27, 2018</span>
+										<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
+										<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($featured_info[$random]->created_date));?></span>
 									</div>
-									<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
+									<h3 class="post-title"><a href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><?php echo $featured_info[$random]->title; ?></a></h3>
 								</div>
 							</div>
 
-							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./assets/img/post-1.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-meta">
-										<a class="post-category cat-2" href="category.html">JavaScript</a>
-										<span class="post-date">March 27, 2018</span>
-									</div>
-									<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-								</div>
-							</div>
+							<?php		
+									}
+								}
+							 ?>
 						</div>
 						<!-- /post widget -->
 						
 						<!-- ad -->
 						<div class="aside-widget text-center">
-							<a href="#" style="display: inline-block;margin: auto;">
-								<img class="img-responsive" src="./assets/img/ad-1.jpg" alt="">
-							</a>
+							<?php randomAd('simplead');	 ?>
 						</div>
 						<!-- /ad -->
 					</div>
@@ -350,51 +308,38 @@
 							<h2>Featured Posts</h2>
 						</div>
 					</div>
+					<?php
+						$featured_info=$blog_object->getAllFeaturedBlog();
+						if($featured_info){
+							 	for ($i=0; $i <3 ; $i++) { 
+								$random=rand(0,sizeof($featured_info)-1);
+								// echo $random;
+								if(isset($featured_info[$random]->image) && !empty($featured_info[$random]->image) && file_exists(UPLOADS_PATH.'blog/'.$featured_info[$random]->image)){
+										$thumbnail=UPLOAD_URL.'blog/'.$featured_info[$random]->image;
 
-					<!-- post -->
+
+									}else{
+										$thumbnail=UPLOAD_URL.'logo.png';	
+									}
+					?>
+
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-4.jpg" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
+									<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
+										<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($featured_info[$random]->created_date));?></span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
+								<h3 class="post-title"><a href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><?php echo $featured_info[$random]->title; ?></a></h3>
 							</div>
 						</div>
 					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./assets/img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+					<?php
+							}
+						}	
+					?>
+					
 				</div>
 				<!-- /row -->
 			</div>
@@ -415,120 +360,76 @@
 									<h2>Most Read</h2>
 								</div>
 							</div>
-							<!-- post -->
+							<?php 
+								$blog_most=$blog_object->getBlogByViews(0,4);
+								// debugger($blog_most);
+								if($blog_most){
+									foreach ($blog_most as $key => $blog) {
+										if(isset($blog->image) && !empty($blog->image) && file_exists(UPLOADS_PATH.'blog/'.$blog->image)){												
+												$thumbnail=UPLOAD_URL.'blog/'.$blog->image;
+											}else{
+												$thumbnail=UPLOAD_URL.'logo.png';	
+											}
+							?>
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-4.jpg" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
+											<a class="post-category <?php echo COLOR[$blog->categoryid%4] ?>" href="category?id=<?php echo $blog->categoryid  ?>"><?php echo $blog->category ?></a>
+											<span class="post-date" style="color:black;"><?php echo date("M d, Y",strtotime($blog->created_date));?></span>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+										<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
+										<p><?php echo substr(html_entity_decode($blog->content),0,100),'...'; ?>
+													<a href="blog-post?id=<?php echo $blog->id; ?>">read more</a></p>
 									</div>
 								</div>
 							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-6.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">Css</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
+							<?php 
+									}
+								}	
+							?>
 							
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./assets/img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
 							
-							<div class="col-md-12">
-								<div class="section-row">
-									<button class="primary-button center-block">Load More</button>
-								</div>
-							</div>
 						</div>
 					</div>
 
 					<div class="col-md-4">
 						<!-- ad -->
 						<div class="aside-widget text-center">
-							<a href="#" style="display: inline-block;margin: auto;">
-								<img class="img-responsive" src="./assets/img/ad-1.jpg" alt="">
-							</a>
+							<?php randomAd('simplead');	 ?>
 						</div>
 						<!-- /ad -->
 						
 						<!-- catagories -->
 						<div class="aside-widget">
 							<div class="section-title">
-								<h2>Catagories</h2>
+								<h2>Categories</h2>
 							</div>
 							<div class="category-widget">
 								<ul>
-									<li><a href="#" class="cat-1">Web Design<span>340</span></a></li>
-									<li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
-									<li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
-									<li><a href="#" class="cat-3">CSS<span>35</span></a></li>
+									<?php 
+										if($categories){
+											foreach ($categories as $key => $category) {
+									?>
+												<li><a href="category?id=<?php echo $category->id ?>"  class="<?php echo COLOR[$category->id%4] ?>"><?php echo $category->categoryname;?>
+												<span>
+												<?php
+
+													 echo ($blog_object->getBlogNumberByCategory($category->id)[0]->count);
+												?>
+												</span></a></li>
+									<?php			
+											}
+										}
+									?>	
+									
 								</ul>
 							</div>
 						</div>
 						<!-- /catagories -->
 						
-						<!-- tags -->
-						<div class="aside-widget">
-							<div class="tags-widget">
-								<ul>
-									<li><a href="#">Chrome</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorial</a></li>
-									<li><a href="#">Backend</a></li>
-									<li><a href="#">JQuery</a></li>
-									<li><a href="#">Design</a></li>
-									<li><a href="#">Development</a></li>
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">Website</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- /tags -->
+						
 					</div>
 				</div>
 				<!-- /row -->

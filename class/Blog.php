@@ -87,6 +87,7 @@
 						            'content',
 						            'featured',
 						            'categoryid',	
+						            'created_date',
 						            '(SELECT categoryname FROM categories where id=categoryid) as category',
 						            'views',
 						            'image'],
@@ -122,6 +123,38 @@
 									'status'=>'Active',
 									'featured'=>'Featured'
 									)),
+						
+							/*'or'=>array(
+									'columnname'=>'value',
+									'columnname'=>'value')*/
+						
+
+						);
+						return $this->getData($args,$is_die);
+		}
+		public function getAllRecentBlog($offset,$no_of_data,$is_die=false){
+			$args = array(
+						'field'=> ['id',
+						            'title',
+						            'content',
+						            'featured',
+						            'categoryid',
+						            'created_date',
+						            '(SELECT categoryname FROM categories where id=categoryid) as category',
+						            'views',
+						            'image'],
+						'where'=>array(
+							'and'=>array(
+									'status'=>'Active',
+									)),
+						'limit'=>array(
+							'offset'=>$offset,
+							'no_of_data'=>$no_of_data	
+								),
+						'order'=>array(
+									'columnname'=>'created_date',
+									'orderType'=>'DESC'
+									),
 						
 							/*'or'=>array(
 									'columnname'=>'value',
