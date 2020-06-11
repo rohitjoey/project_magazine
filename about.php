@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+<?php include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 		$header="About";
 		$bread='About us';
 		include 'inc/header.php';	

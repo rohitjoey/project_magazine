@@ -23,7 +23,6 @@
 								<a href="index" class="logo"><img src="assets/img/logowhite-1.png" alt="" style="width:180px;height:auto;"></a>
 							</div>
 							<ul class="footer-nav">
-								<li><a href="#">Privacy Policy</a></li>
 							</ul>
 							<div class="footer-copyright">
 								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

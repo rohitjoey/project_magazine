@@ -12,7 +12,7 @@
 					
 					<!-- post -->
 							<?php
-								$blog_object= new BLog();
+								$blog_object= new Blog();
 								$featured_info=$blog_object->getAllFeaturedBlog();
 								if($featured_info){
 									 	for ($i=0; $i <2 ; $i++) { 

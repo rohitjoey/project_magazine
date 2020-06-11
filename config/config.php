@@ -18,21 +18,24 @@
 		define('SITE_URL','http://magazine.com/');
 	}else{
 		error_reporting(0);
-		define('DB_HOST','localhost');
-		define('DB_NAME','magazine');
-		define('DB_USER','root');
-		define('DB_PASS','');
+		define('DB_HOST','sql111.epizy.com');
+		define('DB_NAME','epiz_25987053_magazine');
+		define('DB_USER','epiz_25987053');
+		define('DB_PASS','CaiCFcf1IqT');
 		define('SITE_URL','http://www.magazine.com/');
+		ini_set('display_errors', 'On');
+		ini_set('html_errors', 'On');
 
 	}
-	define('ERROR_PATH',$_SERVER['DOCUMENT_ROOT'].'error/');
-	define('CONFIG_PATH',$_SERVER['DOCUMENT_ROOT'].'config/');
-	define('CLASS_PATH',$_SERVER['DOCUMENT_ROOT'].'class/');
-	define('UPLOADS_PATH',$_SERVER['DOCUMENT_ROOT'].'uploads/');
+	define('ERROR_PATH',$_SERVER['DOCUMENT_ROOT'].'/error/');
+	define('CONFIG_PATH',$_SERVER['DOCUMENT_ROOT'].'/config/');
+	define('CLASS_PATH',$_SERVER['DOCUMENT_ROOT'].'/class/');
+	define('UPLOADS_PATH',$_SERVER['DOCUMENT_ROOT'].'/uploads/');
 	define('ALLOWED_EXTENSION',['jpg','png','gif','jpeg','tif']);
 
-	define('UPLOAD_URL',SITE_URL.'uploads/');
+	define('UPLOAD_URL',SITE_URL.'/uploads/');
 	
+
 
 ?>		
 

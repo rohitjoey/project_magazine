@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+<?php include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 		if(isset($_GET['id']) && !empty($_GET['id'])){
 			$archive_id=(int)$_GET['id'];
 			if($archive_id){

@@ -1,5 +1,5 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 	$ads= new Ads();
 	// debugger($_POST,true);
 	if($_POST){

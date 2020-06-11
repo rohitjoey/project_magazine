@@ -46,6 +46,7 @@
                           <th>Type</th>
                           <th>Coment Id</th>
                           <th>Blog Id</th>
+                          <th>Blog Name</th>
                           <th>Comment Status</th>
                           <th>Action</th>
                          </thead>
@@ -53,6 +54,7 @@
                             <?php
                               $comment=new Comment();
                               $data=$comment->getAllWaitingComment();
+                              // debugger($data);
                               if ($data) {
                                 foreach ($data as $key => $value) {
                             ?>        
@@ -66,6 +68,7 @@
                                       <td><?php echo $value->commentType;?></td>
                                       <td><?php echo (isset($value->commentId) && !empty($value->commentId))?$value->commentId:"0";?></td>
                                       <td><?php echo $value->blogId;?></td>
+                                      <td><?php echo $value->blogname;?></td>
                                       <td><?php echo $value->commentStatus;?></td>
                                       <td>
                                         <a href="process/comment?id=<?php echo($value->id);?> &amp; act=<?php echo substr(md5("Accept Comment".$value->id.$_SESSION['token']), 3, 10);?>" class="btn btn-success"   >

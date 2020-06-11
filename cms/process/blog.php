@@ -1,5 +1,5 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 	$blog= new Blog;
 	/*debugger($_POST);
 	debugger($_FILES,true);*/

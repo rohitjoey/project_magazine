@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+<?php include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 		
 	if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){   
          $url = "https://";   

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . 'config/init.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/config/init.php';
 $Share = new Share();
 // debugger($_POST,true);
 if (isset($_POST) && !empty($_POST)) {

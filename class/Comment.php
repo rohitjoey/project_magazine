@@ -63,7 +63,18 @@
 
 		public function getAllWaitingComment($is_die=false){
 			$args = array(
-						
+						'field'=>['id',
+						            'name',
+						            'email',
+						            'website',
+						            'message',
+						            'commentType',
+						            'commentId',
+						            'blogId',
+						            'commentStatus',
+						            'created_date',
+						        	'(SELECT title FROM blogpost where id=blogId) as blogname'	],
+						            
 						'where'=>array(
 							'and'=>array(
 									'status'=>'Active',

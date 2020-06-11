@@ -1,8 +1,8 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+<?php include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 		if(isset($_GET['id']) && !empty($_GET['id'])){
 			$blog_id=(int)$_GET['id'];
 			if($blog_id){
-				$blog_object= new BLog();
+				$blog_object= new Blog();
 				$blog_info=$blog_object->getBLogById($blog_id);
 					// debugger($blog_info);
 				if($blog_info){

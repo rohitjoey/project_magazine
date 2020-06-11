@@ -1,5 +1,5 @@
 <?php 
-	include $_SERVER['DOCUMENT_ROOT'].'config/init.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/init.php';
 	unset($_SESSION['find']);
 	if(isset($_POST['search']) && !empty($_POST['search'])){
 		$key=$_POST['search'];
