@@ -55,7 +55,7 @@
 										}
 							?>
 									<div class="post post-widget">
-										<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+										<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img style="width: 90px; height:90px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 										<div class="post-body">
 											<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title; ?></a></h3>
 											<a href="category?id=<?php echo $blog->categoryid ?>"><?php echo $blog->category; ?></a>

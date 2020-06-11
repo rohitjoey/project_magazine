@@ -68,10 +68,12 @@
 						<div class="nav-btns">
 							<button class="aside-btn"><i class="fa fa-bars"></i></button>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<div class="search-form">
-								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
-								<button class="search-close"><i class="fa fa-times"></i></button>
-							</div>
+							<form action="process/search" method="post">
+								<div class="search-form">
+									<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
+									<button class="search-close"><i class="fa fa-times"></i></button>
+								</div>
+							</form>
 						</div>
 						<!-- /search & aside toggle -->
 					</div>
@@ -159,7 +161,7 @@
 							$thumbnail=UPLOAD_URL.'logo.png';	
 						}
 				?>
-				<div class="background-img" style="background-image: url('<?php echo $thumbnail?>');"></div>
+				<div class="background-img" style="background-image: url('<?php echo $thumbnail?>'); "></div>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-10">

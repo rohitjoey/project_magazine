@@ -53,29 +53,7 @@
 						</div>
 						<!-- ad -->
 						
-						<!-- author -->
-						<!-- <div class="section-row">
-							<div class="post-author">
-								<div class="media">
-									<div class="media-left">
-										<img class="media-object" src="./assets/img/author.png" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-heading">
-											<h3>John Doe</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-										<ul class="author-social">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-											<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div> -->
-						<!-- /author -->
+						
 
 						<!-- comments -->
 						<div class="section-row">
@@ -221,7 +199,7 @@
 											}
 							?>
 							<div class="post post-widget">
-								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img style="width: 90px; height:90px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title ?></a></h3>
 								</div>
@@ -258,7 +236,7 @@
 							
 
 							<div class="post post-thumb">
-								<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img style="width: 100%; height:216px; object-fit:cover;"src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-meta">
 										<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>

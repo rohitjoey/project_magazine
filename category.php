@@ -52,7 +52,7 @@
 												$thumbnail=UPLOAD_URL.'logo.png';	
 											}
 									?>		
-									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[0]->id; ?>"><img src="<?php echo $thumbnail;?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[0]->id; ?>"><img style="width: 750px; height:450px; object-fit:cover;" src="<?php echo $thumbnail;?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category <?php echo(COLOR[$cat_id%4]);?>" href=""><?php echo $bread ?></a>
@@ -79,7 +79,7 @@
 												$thumbnail=UPLOAD_URL.'logo.png';	
 											}
 									?>	
-									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[1]->id; ?>"><img src="<?php echo $thumbnail;?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[1]->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail;?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category <?php echo(COLOR[$cat_id%4]);?>" href=""><?php echo $bread ?></a>
@@ -103,7 +103,7 @@
 												$thumbnail=UPLOAD_URL.'logo.png';	
 											}
 									?>	
-									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[2]->id; ?>"><img src="<?php echo $thumbnail;?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $featured_blog_info[2]->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail;?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category <?php echo(COLOR[$cat_id%4]);?>" href=""><?php echo $bread ?></a>
@@ -142,7 +142,7 @@
 										<!-- post -->
 									<div class="col-md-12">
 										<div class="post post-row">
-											<a class="post-img" href="blog-post?id=<?php echo $blog->id; ?>"><img src="<?php echo $thumbnail;?>" alt=""></a>
+											<a class="post-img" href="blog-post?id=<?php echo $blog->id; ?>"><img style="width: 300px; height:180px; object-fit:cover;" src="<?php echo $thumbnail;?>" alt=""></a>
 											<div class="post-body">
 												<div class="post-meta">
 													<a class="post-category <?php echo(COLOR[$cat_id%4]);?>" href=""><?php echo $bread ?></a>
@@ -151,7 +151,7 @@
 												<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id; ?>"><?php echo $blog->title; ?></a></h3>
 												<p>
 													<?php echo substr(html_entity_decode($blog->content),0,100),'...'; ?>
-													<a href="blog-post?id=<?php echo $blog->id; ?>"><i class="fa fa-info"></i></a>
+													<a href="blog-post?id=<?php echo $blog->id; ?>">read more</i></a>
 												</p>
 											</div>
 										</div>
@@ -169,11 +169,11 @@
 							
 							
 							
-							<div class="col-md-12">
+							<!-- <div class="col-md-12">
 								<div class="section-row">
 									<button class="primary-button center-block">Load More</button>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					
@@ -202,7 +202,7 @@
 											}
 							?>
 							<div class="post post-widget">
-								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img style="width: 90px; height:90px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title ?></a></h3>
 								</div>

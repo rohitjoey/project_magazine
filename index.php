@@ -29,7 +29,7 @@
 								?>
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img style="width: 100%; height:350px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
@@ -74,7 +74,7 @@
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category <?php echo(COLOR[$recent->categoryid%4]);?>" href="category?id=<?php echo $recent->categoryid ?>"><?php echo $recent->category ?></a>
@@ -122,7 +122,7 @@
 
 							<div class="col-md-12">
 								<div class="post post-thumb">
-									<a class="post-img" href="blog-post?id=<?php echo $recent_big->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $recent_big->id; ?>"><img style="width: 750px; height:450px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category <?php echo(COLOR[$recent_big->categoryid%4]);?>" href="category?id=<?php echo $recent_big->categoryid ?>"><?php echo $recent_big->category ?></a>
@@ -157,7 +157,7 @@
 								?>
 							<div class="col-md-6">
 								<div class="post">
-									<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $recent->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category <?php echo(COLOR[$recent->categoryid%4]);?>" href="category?id=<?php echo $recent->categoryid ?>"><?php echo $recent->category ?></a>
@@ -201,7 +201,7 @@
 
 
 							<div class="post post-widget">
-								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img style="width: 90px; height:90px; object-fit:cover;"  src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<h3 class="post-title"><a href="blog-post?id=<?php echo $blog->id ?>"><?php echo $blog->title ?></a></h3>
 								</div>
@@ -267,7 +267,7 @@
 							
 
 							<div class="post post-thumb">
-								<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+								<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 								<div class="post-body">
 									<div class="post-meta">
 										<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
@@ -325,7 +325,7 @@
 
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+							<a class="post-img" href="blog-post?id=<?php echo $featured_info[$random]->id; ?>"><img style="width: 360px; height:216px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category <?php echo(COLOR[$featured_info[$random]->categoryid%4]);?>" href="category?id=<?php echo $featured_info[$random]->categoryid ?>"><?php echo $featured_info[$random]->category ?></a>
@@ -373,7 +373,7 @@
 							?>
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img src="<?php echo $thumbnail ?>" alt=""></a>
+									<a class="post-img" href="blog-post?id=<?php echo $blog->id ?>"><img style="width: 300px; height:180px; object-fit:cover;" src="<?php echo $thumbnail ?>" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category <?php echo COLOR[$blog->categoryid%4] ?>" href="category?id=<?php echo $blog->categoryid  ?>"><?php echo $blog->category ?></a>

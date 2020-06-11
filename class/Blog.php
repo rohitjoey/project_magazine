@@ -165,6 +165,22 @@
 						return $this->getData($args,$is_die);
 		}
 
+		public function getBlogbyKey($key,$is_die=false){
+			$args = array(
+				'fields' => ['id',
+					            'title',
+					            'content',
+					            'featured',
+					            'categoryid',
+					            '(SELECT categoryname FROM categories where id = categoryid) as category',
+					            'view',
+					            'image',
+					        	'created_date'],
+				'where' => " where title LIKE '%".$key."%'"
+			);
+			return $this->getData($args,$is_die);
+		}
+
 		public function getAllFeaturedBlogOfCategoryWithLimit($cat_id,$offset,$no_of_data,$is_die=false){
 			$args = array(
 						'field'=> ['id',

@@ -41,7 +41,7 @@
 					}
 	?>
 			<a href="<?php echo $ads_info[$random]->URL?>" style="display: inline-block;margin: auto;">
-				<img class="img-responsive" src="<?php echo $thumbnail ?>" alt="">
+				<img style="width: <?php echo $type=='simplead'?'300px':'728px';  ?>; height:<?php echo $type=='simplead'?'250px':'90px';  ?>; object-fit:cover;"class="img-responsive" src="<?php echo $thumbnail ?>" alt="">
 			</a>
 	<?php
 	}
