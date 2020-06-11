@@ -54,7 +54,7 @@
 							// debugger($categories);
 							foreach ($categories as $key => $category) {
 						?>
-							<li class="<?php echo(COLOR[$category->id%4]);?>"><a href="category?id=<?php echo $category->id ?>"><?php echo $category->categoryname;?></a></li>
+							<li style="font-size:13.5px; " class="<?php echo(COLOR[$category->id%4]);?>"><a href="category?id=<?php echo $category->id ?>"><?php echo $category->categoryname;?></a></li>
 								
 
 						<?php		
